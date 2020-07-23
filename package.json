@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "name": "tanly-test",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "bigfish dev",
+    "dev": "bigfish dev",
+    "analyze": "bigfish dev --analyze",
+    "devs": "cross-env MOCK=none bigfish dev",
+    "test": "bigfish test",
+    "cov": "bigfish test --coverage",
+    "build": "bigfish build",
+    "pack": "bigfish pack",
+    "lint": "bigfish lint --style --eslint.ext='.ts,.tsx,.jsx,.js'",
+    "lint:fix": "bigfish lint --style --prettier --eslint.ext='.ts,.tsx,.jsx,.js' --fix",
+    "postinstall": "bigfish g tmp",
+    "precommit": "bigfish lint --staged --prettier --style --fix --eslint.ext='.ts,.tsx,.jsx,.js'",
+    "help": "bigfish help",
+    "version": "bigfish -v",
+    "ci": "bigfish lint && bigfish test --coverage",
+    "oneapi": "bigfish api generate service && bigfish api generate mock",
+    "oneapi:service": "bigfish api generate service",
+    "oneapi:mock": "bigfish api generate mock"
+  },
+  "dependencies": {
+    "@alipay/bigfish": "^3.0.0",
+    "@alipay/tech-ui": "^1.14.0"
+  },
+  "devDependencies": {
+    "@ali/ci": "^4.21.0",
+    "cross-env": "^6.0.3"
+  },
+  "engines": {
+    "install-alinode": "5"
+  },
+  "ci": {
+    "type": "aci",
+    "version": "alinode=5"
+  },
+  "config": {
+    "assets": {
+      "hash": true
+    }
+  }
+}
